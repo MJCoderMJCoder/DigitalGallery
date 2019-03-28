@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">数字展厅</string>
+
+    <string name="title_activity_qrscan">QRScanActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

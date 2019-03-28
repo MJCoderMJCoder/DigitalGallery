@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/menu_bg">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/translucency">
+
+        <ImageView
+            android:id="@+id/menuSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:src="@drawable/ic_dehaze_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/menuSwitch"
+            android:gravity="center"
+            android:text="全球数字生活体验中心"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/visitSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="参观二层"
+            android:textColor="@android:color/white"/>
+
+        <View
+            android:id="@+id/secondDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/visitSecond"
+            android:background="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/visitThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondDivider"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="参观三层"
+            android:textColor="@android:color/white"/>
+
+        <View
+            android:id="@+id/thirdDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/visitThird"
+            android:background="@android:color/white"/>
+
+        <!-- <TextView
+             android:id="@+id/questionnaire"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/thirdDivider"
+             android:gravity="center"
+             android:padding="8dp"
+             android:text="调查问卷"
+             android:textColor="@android:color/white"/>-->
+
+        <View
+            android:id="@+id/questionnaireDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/thirdDivider"
+            android:background="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/endVisit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionnaireDivider"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="结束参观"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>

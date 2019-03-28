@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.lzf.digitalgallery"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.1.3470"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {  //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+        abortOnError true
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"  // 不显示Log
+            minifyEnabled true //是否启动混淆 ture:打开   false:关闭
+            zipAlignEnabled true   //ZipAlign优化
+            shrinkResources true  // 移除无用的resource文件
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    compile 'com.squareup.okio:okio:1.15.0'
+}
+
+/**
+ * 解决以下问题
+ * java.util.zip.ZipException: duplicate entry
+ *
+ * NoClassDefFoundError: Failed resolution of: Landroid/support/v4/animation/AnimatorCompatHelper;
+ *
+ * ClassNotFoundException: Didn't find class "android.support.v4.animation.AnimatorCompatHelper" on path: DexPathList[[zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/base.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_dependencies_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_0_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_1_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_2_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_3_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_4_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_5_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_6_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_7_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_8_apk.apk", zip file "/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_9_apk.apk"],nativeLibraryDirectories=[/data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/lib/arm64, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/base.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_dependencies_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_0_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_1_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_2_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_3_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_4_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_5_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_6_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_7_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_8_apk.apk!/lib/arm64-v8a, /data/app/com.xinhe.sdb-HWi1vweVI1DElx-lBq9UKA==/split_lib_slice_9_apk.apk!/lib/arm64-v8a, /system/lib64, /vendor/lib64]]
+ */
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '26.1.0'
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@mipmap/background_image">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/background_image"/>
+    <!-- <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@color/translucency">\
+         -->
+    <Button
+        android:id="@+id/startVisit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="45dp"
+        android:background="@null"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="0sp"/>
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>
