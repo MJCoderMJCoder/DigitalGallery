@@ -19,6 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+##---------------Begin: proguard configuration for MJCoder  ----------
+-keep class com.uuzuche.lib_zxing.** { *; }
+-keep class com.google.zxing.** { *; }
+##---------------End: proguard configuration for MJCoder  ----------
 
 ##---------------Begin: proguard configuration for OKIO  ----------
 # Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
